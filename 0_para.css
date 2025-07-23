@@ -1,0 +1,66 @@
+#tela{
+   display: block;
+   position: relative;
+}
+#inicio{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-70%);
+}
+#secao{
+    display: flex;
+    text-align: center;
+    top: 100%;
+    transform: translateY(100%);
+}
+#bolo{
+    width: 100px;
+    height: 100px;
+}
+#FAK{
+    color: rgb(255, 136, 136);
+    text-align: center;
+}
+#osaka{
+    width: 50px;
+    height: 50px;
+}
+#texto{
+    width: 100%;
+    background-color: aquamarine;
+    margin: 0;
+}
+#titulo{
+    text-align: center;   
+    color: #ff35ff;
+}
+#paragrafo{
+    color: #ff3737fb;
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#texto_fotos{
+    display: flex;
+    justify-content: space-between;
+}
+#foto{
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+#polaroid{
+    background-color: white;
+    width: 130px;
+    height: 150px;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+body{
+    margin:0;
+}
