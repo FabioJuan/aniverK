@@ -1,0 +1,149 @@
+.livro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    width: 350px;
+    height: 480px;
+    border-radius: 15px;
+    animation: vira 1s linear;
+
+}
+.folha{
+    display: block;
+    background-color: rgb(245, 232, 178);
+    justify-content: center;
+    width: 320px;
+    height: 450px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 10px;
+    margin: 0%;
+}
+#livroui{
+    display: block;
+    position: relative;
+    width: 350px;
+    justify-content: center;
+}
+.paragrafo{
+    font-size: 10pt;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ui{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+.imagem{
+    width: 70px;
+    height: 70px;
+    transform: translateY(5px);
+}
+#folha{
+    display: block;
+    transform: translateY(3%);
+    transform: translateX(1%);
+    background-color: rgb(245, 232, 178);
+}
+#marcador{
+    display: flex;
+    background-color: rgb(255, 0, 0);
+    width: 40px;
+    height: 40px;
+    margin: 0%;
+    transform: translateY(-5px);
+}
+#triangulo{
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid rgb(245, 232, 178);
+    transform: translateY(20px);
+}
+#ant{
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid transparent;
+	border-top: 30px solid transparent;
+	border-right: 50px solid rgb(255, 114, 20);
+    border-radius: 6px;
+    flex:1;
+}
+#fim{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(255, 114, 20);
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+    text-align: center;
+
+}
+#sus{
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid transparent;
+	border-top: 30px solid transparent;
+	border-left: 50px solid rgb(255, 114, 20);
+    border-radius: 6px;
+    flex:1;
+}
+#vem{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(112, 255, 2);
+    
+}
+#polaroid{
+    width: 90px;
+    height: 100px;
+    background-color: white;
+    text-align: center;
+    margin: 2px;
+
+}
+#p1{
+    display: flex;
+    margin: 5px;
+    height: 120px;
+}
+#p2{
+    display: flex;
+    margin: 5px;
+    height: 200px;
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+#p3{
+    display: flex;
+    margin: 5px;
+    height: 120px;
+}
+#texto{
+    height: 100px;
+    width: 180px;
+    font-size: 10pt;
+}
+#vem{
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+}
+p{margin: 0;}
+body{
+    display:flex;
+    justify-content:center;
+}
+@keyframes vira{
+    0%{
+        transform:rotateY(180deg);
+    }
+    100%{
+        transition: rotateY(360);
+    }
+}
