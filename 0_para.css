@@ -33,12 +33,22 @@
     width: 50px;
     height: 50px;
 }
+#img_album{
+    width: 150px;
+    height: 150px;
+}
+#titulo{
+    text-align: center;
+}
 .sli{
     width: 50px;
     height: 50px;
     flex: 1;
     margin-right: 20px;
     margin-left: 20px;
+    background-color: #3c0080;
+    background: linear-gradient(180deg, rgb(129, 8, 99) 0%, rgb(95, 1, 99) 63%, rgb(171, 46, 202) 100%);
+    border-radius: 7px;
 }
 .elementos{
     color: rgb(255, 136, 136);
@@ -46,9 +56,46 @@
     text-align: center;
     display: flex;
     justify-content: space-between;
-    margin-right: 20px;
-    margin-left: 20px;
-    transform: translateY(10%);
+    margin-right: auto;
+    margin-left: auto;
+    transform: translateY(220%);
+
+}
+.confirm{
+    display: flex;
+    flex-direction: column;
+    background: #3c0080;
+    background: linear-gradient(132deg, rgba(60, 0, 128, 1) 0%, rgba(9, 9, 173, 1) 99%);
+    text-align: center;
+    width: 350px;
+    height: 350px;
+    box-shadow:slateblue;
+    border-radius: 15px;
+    border-style: double;
+    border-color: rgb(90, 0, 143);
+    justify-content: center;
+}
+.elem{
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 300px;
+    height: 50px; 
+    font-size: large;
+    border-radius: 10px;
+}
+.musica{
+    display: flex;
+    justify-content: center;
+    transform: translateY(80%);
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+.player{
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 body{
@@ -103,8 +150,11 @@ body{
 }
 .imagem{
     width: 70px;
-    height: 70px;
+    height: 70px;                                           
     transform: translateY(5px);
+}
+.album{
+    text-align: center;
 }
 #folha{
     display: block;
@@ -157,6 +207,9 @@ body{
     margin-right: 20px;
     align-items: center;
     text-align: center;
+    background: #3c0080;
+    background: linear-gradient(132deg, rgb(230, 169, 37) 0%, rgb(199, 163, 4) 99%);
+    
 }
 #vem{
     width: 40px;
@@ -196,14 +249,43 @@ body{
     width: 40px;
     height: 40px;
 }
+#confetes{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+#Entrar{
+    background-color: rgb(89, 126, 248);
+    color:white;
+    border-color: rgb(89, 126, 248);
+    background: #3c0080;
+    background: linear-gradient(132deg, rgb(42, 194, 240) 0%, rgb(37, 95, 170) 99%);
+}
+#voltar{
+    width: 50px;
+    height: 50px;
+    transform: rotateY(180deg);
+}
+#pause{
+    width: 50px;
+    height: 50px;
+}
+#proxima{
+    width: 50px;
+    height: 50px;
+}
 p{
     margin: 0;
 }
 main{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-
+h2{
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
 
 @keyframes fogos {

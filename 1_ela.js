@@ -5,6 +5,23 @@ const foguetes =  document.getElementById("confetes")
 const elementos = document.getElementsByClassName("elementos")
 addEventListener("load",elem_tela)
 addEventListener("resize",elem_tela)
+//variaveis da senha
+const sec_sem = document.querySelector(".confirm")
+const btn_sen = document.querySelector("#Entrar")
+var tentativas = 3
+const acerto_sen = new Audio()
+acerto_sen.src = "sons/sonic-the-hedgehog-continue.mp3"
+const erro_sen = new Audio()
+erro_sen.src = "sons/sonic-error-sound.mp3"
+
+//variaveis do player de musica
+const musica = new Audio()
+const musicas = ["musica/Falling Behind.mp3","musica/Laufey - Lover Girl.mp3","musica/Legião Urbana - Tempo Perdido.mp3"]
+const btn_player = [document.querySelector("#voltar"),document.querySelector("#pause"),document.querySelector("#proxima")]
+const titulo = document.querySelector("#titulo")
+const titulos_musicas = ["falling behind - laufey","lover girl - laufey","tempo perdido - legião urbana"]
+var endereco = 2
+
 
 //funçoes do livro
 var vem = document.getElementById("vem")
@@ -15,9 +32,30 @@ var imagens = [document.getElementById("img1"),document.getElementById("img2")]
 var pagina = 0
 var btnAntSus = document.getElementById("sus")
 
+
+btn_sen.addEventListener("click",senha_)
+function senha_(event){
+  event.preventDefault()
+  const senha = document.querySelector("#senha").value 
+  if(senha == "luna"){
+    acerto_sen.play()
+    sec_sem.style.display = "none"
+    id_tela.style.display = "flex"
+  }else{
+    tentativas -= 1
+    erro_sen.play()
+    if(tentativas == 0){ 
+      location.href = "senha/sonic.html"
+    }
+  }
+  player_song()
+}
+
 window.onload = function(){
+  id_tela.style.display = "none"
   livroui.style.display = "none"
   elem_tela()
+  player_song()
 }
 
 
@@ -26,7 +64,7 @@ function elem_tela(){
     const largura_tela = window.screen.width
     id_tela.style.width = largura_tela +"px"
     id_tela.style.height = altura_tela +"px"
-    elementos.style.width = largura_tela +"px"
+    //elementos.style.width = largura_tela +"px"
   }
   
   //codigo do livro
@@ -34,7 +72,10 @@ function elem_tela(){
 vem.addEventListener("click",sobe_L)
 vem.addEventListener("click",texto_mf)
 vai.addEventListener("click",desce_L)
+
 foguetes.addEventListener("click",confetes)
+
+
   
 btnAntSus.addEventListener("click",proxima_)
 function sobe_L(){
@@ -66,7 +107,7 @@ function desce_L(){
     )
     setTimeout(() => {
         livro.style.display = "none"
-        id_tela.style.display = "block"
+        id_tela.style.display = "flex"
     }, 2001);
 }
 
@@ -108,8 +149,7 @@ function proxima_(){
 }
 function vira_pag(){
     livro.animate(
-        [
-            
+        [   
             {transform: "translateY(15%)"},
             {transform: "translateY(0%)"},
             {transform:"rotateY(180deg)"},
@@ -123,6 +163,48 @@ function vira_pag(){
     )
 }
 //fim do codgo do livro
+function player_song(){
+  switch(endereco){
+    case 0:
+      musica.src = musicas[0]
+      
+      break;
+    case 1:
+      musica.src = musicas[1]
+      break;
+    case 2:
+      musica.src = musicas[2]
+      break;
+  }
+  titulo.innerHTML = titulos_musicas[endereco]
+  musica.play();
+}
+function prox_song(){
+  if(endereco != musicas.length -1){
+    endereco +=1
+  }else{
+    endereco = 0
+  }
+  player_song()
+}
+
+function anter_song(){
+  if(endereco != 0){
+    endereco -=1
+  }else{
+    endereco = musicas.length -1
+  }
+  player_song()
+}
+
+function pause_song(){
+  musica.pause()
+}
+btn_player[0].addEventListener("click",anter_song)
+btn_player[1].addEventListener("click",pause_song)
+btn_player[2].addEventListener("click",prox_song)
+
+
 
 
 

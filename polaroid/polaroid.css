@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    background-color: aqua;
+    justify-content: center;
+}
+#e_se{
+    transform: translateY(50%);
+    animation: chega 2s linear;
+    animation: gira 1s linear;
+}
+#polaroid{
+    background-color: white;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    justify-content: center;
+}
+#imgpolar{
+    margin-top: 5%;
+    width: 270px;
+    height: 270px;
+}
+@keyframes chega{
+    0%{
+        transform: translateY(-50%)
+    }
+    40%{
+        transform: translateY(30%)
+    }
+    100%{
+        transform: translateY(50%)
+    }
+}
+@keyframes gira{
+    0%{
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(240deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
