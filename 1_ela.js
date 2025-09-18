@@ -43,7 +43,7 @@ btn_sen.addEventListener("click",senha_)
 function senha_(event){
   event.preventDefault()
   const senha = document.querySelector("#senha").value 
-  if(senha == "luna"){
+  if(senha == "lunaticoguita"){
     acerto_sen.play()
     sec_sem.style.display = "none"
     id_tela.style.display = "flex"
