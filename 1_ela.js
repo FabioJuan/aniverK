@@ -15,12 +15,18 @@ const erro_sen = new Audio()
 erro_sen.src = "sons/sonic-error-sound.mp3"
 
 //variaveis do player de musica
-const musica = new Audio()
-const musicas = ["musica/Falling Behind.mp3","musica/Laufey - Lover Girl.mp3","musica/Legião Urbana - Tempo Perdido.mp3"]
+const musica = document.getElementById("music")
+const musicas = ["musica/Falling Behind.mp3","musica/Legião Urbana - Tempo Perdido.mp3",
+                "musica/Laufey - Lover Girl.mp3","musica/The Girl from Ipanema - Frank Sinatra.mp3",
+                "musica/Jesus, Filho de Deus - Fernandinho.mp3","musica/Dançar na chuva - Fernandinho.mp3","musica/A Dança do Pinguim - Aline Barros.mp3"]
 const btn_player = [document.querySelector("#voltar"),document.querySelector("#pause"),document.querySelector("#proxima")]
 const titulo = document.querySelector("#titulo")
-const titulos_musicas = ["falling behind - laufey","lover girl - laufey","tempo perdido - legião urbana"]
-var endereco = 2
+const titulos_musicas = ["falling behind - laufey","tempo perdido - legião urbana","lover girl - laufey",
+  "The Girl from Ipanema - Frank Sinatra","Jesus, Filho de Deus - Fernandinho",
+  "Dançar na chuva - Fernandinho","A Dança do Pinguim - Aline Barros"]
+const album = document.querySelector("#img_album")
+var tocando = true
+var endereco = parseInt(Math.random() * 8)
 
 
 //funçoes do livro
@@ -52,6 +58,7 @@ function senha_(event){
 }
 
 window.onload = function(){
+  console.log(parseInt(Math.random() *7))
   id_tela.style.display = "none"
   livroui.style.display = "none"
   elem_tela()
@@ -78,6 +85,7 @@ foguetes.addEventListener("click",confetes)
 
   
 btnAntSus.addEventListener("click",proxima_)
+
 function sobe_L(){
     id_tela.style.display = "none"
     livro.style.display = "block"
@@ -167,13 +175,31 @@ function player_song(){
   switch(endereco){
     case 0:
       musica.src = musicas[0]
-      
+      album.src = "LIVRO/foto1.jfif"
       break;
     case 1:
       musica.src = musicas[1]
+      album.src = "LIVRO/foto2.jfif"
       break;
     case 2:
       musica.src = musicas[2]
+      album.src = "LIVRO/foto3.jfif"
+      break;
+    case 3:
+      musica.src = musicas[3]
+      album.src = "LIVRO/foto4.jfif"
+      break;
+    case 4:
+      musica.src = musicas[4]
+      album.src = "LIVRO/foto5.jfif"
+      break;
+    case 5:
+      musica.src = musicas[5]
+      album.src = "LIVRO/foto6.jfif"
+      break;
+    case 6:
+      musica.src = musicas[6]
+      album.src = "LIVRO/foto7.jfif"
       break;
   }
   titulo.innerHTML = titulos_musicas[endereco]
@@ -198,13 +224,31 @@ function anter_song(){
 }
 
 function pause_song(){
-  musica.pause()
+  tempo = musica.currentTime
+  if(tocando == true){
+    btn_player[1].src = "images/pause.png"
+    musica.pause()
+    tocando = false
+  }else{
+    btn_player[1].src = "images/pause2.png"
+    musica.play()
+    musica.currentTime = tempo
+
+    tocando = true 
+  }
 }
 btn_player[0].addEventListener("click",anter_song)
 btn_player[1].addEventListener("click",pause_song)
 btn_player[2].addEventListener("click",prox_song)
+musica.addEventListener("ended",prox_song)
+function segundos(){
+  progessbar = document.getElementById("progessbar")
+  porcentagem = musica.currentTime / musica.duration
+  progessbar.style.width = porcentagem * 100 + "%"
+}
 
 
+setInterval(segundos,500)
 
 
 
