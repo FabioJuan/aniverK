@@ -16,17 +16,27 @@ erro_sen.src = "sons/sonic-error-sound.mp3"
 
 //variaveis do player de musica
 const musica = document.getElementById("music")
-const musicas = ["musica/Falling Behind.mp3","musica/Legião Urbana - Tempo Perdido.mp3",
-                "musica/Laufey - Lover Girl.mp3","musica/The Girl from Ipanema - Frank Sinatra.mp3",
-                "musica/Jesus, Filho de Deus - Fernandinho.mp3","musica/Dançar na chuva - Fernandinho.mp3","musica/A Dança do Pinguim - Aline Barros.mp3"]
+const musicas = ["musica/Falling Behind.mp3","musica/Legião Urbana - Tempo Perdido.mp3","musica/Laufey - Lover Girl.mp3","musica/The Girl from Ipanema - Frank Sinatra.mp3",
+                "musica/Jesus, Filho de Deus - Fernandinho.mp3","musica/Dançar na chuva - Fernandinho.mp3","musica/A Dança do Pinguim - Aline Barros.mp3","musica/Chega De Saudade - tom jobin.mp3",
+                "musica/Cyndi Lauper Girls - Just Want To Have Fun.mp3","musica/Every breath you take.mp3","musica/I love you baby instrumental - frank sinata.mp3","musica/Maravilhosa Graça.mp3"]
+
 const btn_player = [document.querySelector("#voltar"),document.querySelector("#pause"),document.querySelector("#proxima")]
 const titulo = document.querySelector("#titulo")
-const titulos_musicas = ["falling behind - laufey","tempo perdido - legião urbana","lover girl - laufey",
-  "The Girl from Ipanema - Frank Sinatra","Jesus, Filho de Deus - Fernandinho",
-  "Dançar na chuva - Fernandinho","A Dança do Pinguim - Aline Barros"]
+const titulos_musicas = ["falling behind - laufey", "tempo perdido - legião urbana", "lover girl - laufey", "The Girl from Ipanema - Frank Sinatra",
+                        "Jesus, Filho de Deus - Fernandinho", "Dançar na chuva - Fernandinho", "A Dança do Pinguim - Aline Barros","chega De Saudade - tom jobim",
+                        "Just Want To Have Fun - Cyndi Lauper Girls", "Every breath you take - police", "I love you baby - frank sinata", "Maravilhosa Graça"]
 const album = document.querySelector("#img_album")
 var tocando = true
-var endereco = parseInt(Math.random() * 8)
+var endereco = parseInt(Math.random() * 12)
+const minutos_A = [document.querySelector("#minutos_a"),document.querySelector("#segundos_a")]
+const duracao = [document.querySelector("#minutos"),document.querySelector("#segundos")]
+
+
+
+
+
+
+
 
 
 //funçoes do livro
@@ -48,6 +58,19 @@ function senha_(event){
     sec_sem.style.display = "none"
     id_tela.style.display = "flex"
   }else{
+    sec_sem.animate(
+      [     
+            {marginLeft: "30px"},
+            {marginLeft: "10px"},
+            {marginLeft:"30px"},
+            {marginLeft:"10px"}
+            
+        ],
+        {
+            duration:700,
+            fill:"forwards"
+        }
+    )
     tentativas -= 1
     erro_sen.play()
     if(tentativas == 0){ 
@@ -201,6 +224,26 @@ function player_song(){
       musica.src = musicas[6]
       album.src = "LIVRO/foto7.jfif"
       break;
+    case 7:
+      musica.src = musicas[7]
+      album.src = "LIVRO/foto 8.jfif "
+      break;
+    case 8:
+      musica.src = musicas[8]
+      album.src = "LIVRO/foto9.jfif"
+      break;
+    case 9:
+      musica.src = musicas[9]
+      album.src = "LIVRO/foto10.jfif"
+      break;
+    case 10:
+      musica.src = musicas[10]
+      album.src = "LIVRO/foto11.jfif"
+      break;
+    case 11:
+      musica.src = musicas[11]
+      album.src = "LIVRO/foto12.jfif"
+      break;
   }
   titulo.innerHTML = titulos_musicas[endereco]
   musica.play();
@@ -237,6 +280,12 @@ function pause_song(){
     tocando = true 
   }
 }
+function timer_song(){
+  minutos_A[0].innerHTML = parseInt(musica.currentTime / 60)
+  minutos_A[1].innerHTML = parseInt(musica.currentTime % 60)
+  duracao[0].innerHTML = parseInt(musica.duration / 60)
+  duracao[1].innerHTML = parseInt(musica.duration % 60)
+}
 btn_player[0].addEventListener("click",anter_song)
 btn_player[1].addEventListener("click",pause_song)
 btn_player[2].addEventListener("click",prox_song)
@@ -245,6 +294,7 @@ function segundos(){
   progessbar = document.getElementById("progessbar")
   porcentagem = musica.currentTime / musica.duration
   progessbar.style.width = porcentagem * 100 + "%"
+  timer_song()
 }
 
 
