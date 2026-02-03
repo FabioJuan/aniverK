@@ -143,26 +143,22 @@ function desce_L(){
 }
 
 function texto_mf(){
-    if(pagina > 3 || pagina < 0){
-        pagina =0
-    }
     switch(pagina){
         case 0:
             imagens[0].src = "LIVRO/foto1.jfif"
             imagens[1].src = "LIVRO/foto2.jfif"
             
-            paragrafo[0].innerHTML = "bom como hoje é um dia especial no caso o dia em que voce pode ser presa e se ganher muito dinheiro vai ter que pagar imposto XD brincadeiras a parte Feliz aniversario!!e por meio desse excesso de viadagem "
-            paragrafo[1].innerHTML = "tambem por meio dessa mensagem te agradecer não somente por nossa amizade, mas pelo simples fato de você existir, porque desde o dia que nos aproximamos cada momento contigo se mostra especial de alguma forma, desde um ensaio qualquer até uma  boa viagem. esses dias ficam melhores pelo simples fato de você estar lá. a alegria em contar algo, o amor que você sente por Deus, o jeito de ser, a determinação em mudar de vida tudo isso me contagia e inspira a ser alguém melhor. Desde 2021(sim faz quatro anos que a gente se conhece) nesse tempo passamos por todo tipo de aventuras e desventuras. as vezes brinco que você não teve "
-            paragrafo[2].innerHTML = "infância mas não posso negar que teve uma boa adolescência. grandes momentos como o aniversário da Amanda e tivemos que enfrentar os perigos noturnos, ou quando fomos na feira do"
+            paragrafo[0].innerHTML = "olha só Yui, finalmente o dia de você criar juízo ou vai acabar sendo presa por comer o bolo das outras e se a banda ficar rica vai ter que aprender a pagar imposto XD mas sem brincadeiras agora, Feliz aniversário!! de todas nós aqui da HTT com muito amor"
+            paragrafo[1].innerHTML = "estamos passando para agradecer por você ser essa pessoa tão iluminada e por ter nos unido, porque desde o primeiro dia no clube de música cada ensaio virou uma festa especial, desde as broncas da Mio até as viagens na praia. a vida no colégio é muito melhor só porque você está nela. sua animação, o carinho que você tem por cada uma de nós e sua vontade de tocar nos inspiram a dar o nosso melhor sempre. Desde 2021 (já faz quatro anos!) vivemos coisas que nunca vamos esquecer. A Ritsu vive dizendo que você é uma eterna criança"
+            paragrafo[2].innerHTML = "mas a gente sabe que você se tornou uma guitarrista incrível. passamos por tantos festivais e situações doidas, como quando tivemos que correr para o palco, ou quando fomos todas na feira de"
             break;
         case 1:
             imagens[0].src = "LIVRO/foto3.jfif"
             imagens[1].src = "LIVRO/foto4.jfif"
 
-            paragrafo[0].innerHTML = "livro, e após de um dia inteiro andando em busca de você descidir um livro pra comprar e depois de tanto pensar tu comprou um livro da Collen Hoover q em suas palavras 'não é muito bom eu ler isso' (quem diria né KKKKKKK)"
-            paragrafo[1].innerHTML = "também quando levei o play2 pra jogar na tvzinha da tua avó, e nesse dia descobri o porquê de você não gostar de video games,afinal ate mesmo para subir uma escada em um jogo de lego tava tendo dificuldade, e finalmente a nossa viagem pra mosqueiro, vulgo acapulco, e sendo sincero eu voltaria no tempo para passar esse final de semana tudo de novo porque não lembro de ter me divertido tanto na praia. e sendo redundande tudo isso se mostra especial por você estar lá, estar ouvindo as minhas piadas sem graça, falando sobre o futuro passando vergonha sem medo de ser julgada(ou com medo mesmo),tudo isso te torna amavel e incrivel de "
-            paragrafo[2].innerHTML = "ter por perto. Diante disso quero te dizer: Feliz aniversário e que Deus te faça rica(pra bancar uma viagem na suiça comigokkkkk), não só de dinheiro,mas também de tudo que te edfique como pessoa."
-            break;
+            paragrafo[0].innerHTML = "voces e você quase comprou a loja inteira! Sabe, Yui, a Mio até tenta ser séria, mas ela não consegue esconder o sorriso quando você faz alguma bobeira. A Mugi adora cada segundo das nossas loucuras e a Azusa, bom, ela finge que não, mas te admira mais do que qualquer solo de guitarra famoso. Você é a alma desse clube e sem o seu 'Ui' constante nada teria a mesma graça ou o mesmo ritmo."
+            paragrafo[1].innerHTML = "obrigada por nos ensinar que o mais importante não é acertar todas as notas, mas sim o quanto a gente se diverte tocando juntas. Que seu ano tenha muitas sobremesas, que a Gitah esteja sempre afinada e que seu coração continue gigante desse jeito. Vamos continuar criando memórias, tomando muito chá e fazendo o melhor som do mundo. Você é a nossa 'lead guitar' insubstituível e a amiga que todo mundo gostaria de ter por perto. Parabéns por ser essa garota de ouro, mesmo sendo um pouquinho distraída às vezes!"
+            paragrafo[2].innerHTML = "amamos você demais! Prepare o estômago porque a Mugi trouxe um bolo gigante e a gente não vai deixar sobrar nem uma migalha hoje!"
         default:
             pagina = 0
             texto_mf()
